@@ -415,6 +415,7 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin-top: 0px;
 }
 
 p {
@@ -749,85 +750,40 @@ textarea {
     height: auto;
 }
 
-.wrapper-no-bottom-margin {
-    width: 1320px;
-    margin: 0 auto 0 auto;
-    height: auto;
-}
-
-.group {
-    padding: 0 30px 0 0;
-}
-
-.group::after {
+.grouping::after {
     content: "";
     clear: both;
     display: table;
 }
 
-.group-flex {
-    display: flex;
-    flex-wrap: wrap;
+.content-main {
+	width: 66.6666%;
+	float: left;
+    height: auto;
+    box-sizing: border-box;
+	background-color: #ffffff;
+	padding: 30px;
+	margin: 30px 0 30px 0;
 }
 
-[class*="col-"] {
-    float: left;
-    padding: 0 0 0 30px;
+aside {
+	width: calc(33.3333% - 20px);
+	float: left;
+    padding: 30px 0 0 20px;
     height: auto;
     box-sizing: border-box;
 }
 
-.col-1 {
-    width: 8.3333%;
-}
-
-.col-2 {
-    width: 16.6666%;
-}
-
-.col-3 {
-    width: 25.0000%;
-}
-
-.col-4 {
-    width: 33.3333%;
-}
-
-.col-5 {
-    width: 41.6666%;
-}
-
-.col-6 {
-    width: 50.0000%;
-}
-
-.col-7 {
-    width: 58.3333%;
-}
-
-.col-8 {
-    width: 66.6666%;
-}
-
-.col-9 {
-    width: 75.0000%;
-}
-
-.col-10 {
-    width: 83.3333%;
-}
-
-.col-11 {
-    width: 91.6666%;
-}
-
-.col-12 {
-    width: 100.0000%;
+.aside-text-box {
+	background-color: #ffffff;
+	padding: 30px;
+	margin: 0 0 30px 0;
+	border-top: 6px solid #386641;
 }
 
 @media only screen and (max-width:1279px) {
     
-    .wrapper, .wrapper-no-bottom-margin {
+    .wrapper {
         width: 1008px;
     }
     
@@ -835,7 +791,7 @@ textarea {
 
 @media only screen and (max-width:1007px) {
     
-    .wrapper, .wrapper-no-bottom-margin {
+    .wrapper {
         width: 768px;
     }
     
@@ -843,11 +799,11 @@ textarea {
 
 @media only screen and (max-width:767px) {
     
-    .wrapper, .wrapper-no-bottom-margin {
+    .wrapper {
         width: 100%;
     }
 
-    .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    .main, aside {
         width: 100%;
     }
     
@@ -863,22 +819,13 @@ textarea {
 
 /* Location posts
 --------------------------------------------- */
-.location-container {
-	background-color: #efefef;
-}
-.location-container .event-details {
-	background-color: #ffffff;
-	padding: 0 30px 30px 30px;
-	margin: 0 0 30px 0;
-	border-top: 6px solid #006600;
+#location-container, #event-container {
+	background-color: #f2e8cf;
 }
 
-.location-container .location-main {
-	background-color: #ffffff;
-	padding: 30px;
-	margin: 30px 0 30px 0;
+#event-container h1 {
+	color: #386641;
 }
-
 
 /* Posts and pages
 --------------------------------------------- */

@@ -19,19 +19,18 @@
     if ( is_single() ) :
 ?>
 
-        <section id="event-container" class="location-container">
+        <section id="location-container">
             <div class="wrapper">
-                <div class="group">
-                    <div class="col-8">
-                        <div class="location-main">
+                <div class="grouping">
+
+                        <div class="content-main">
                             <h1><?php echo get_post_meta($post->ID, 'location_name', true); ?></h1>
 
                             <p><?php echo get_post_meta($post->ID, 'location_short_description', true); ?></p>
-                            <?php $size = 'hall-regular';
-                                if (!empty($location_image) ) : ?>
+                            <?php if (has_post_thumbnail() ) : ?>
                                 <div class="event-image">
                                     <figure>
-                                        <?php echo wp_get_attachment_image( $location_image, $size ); ?>
+                                        <?php echo get_the_post_thumbnail(); ?>
                                     </figure>
                                 </div>
                             <?php endif; ?>
@@ -40,9 +39,9 @@
                                 <?php echo wpautop(get_post_meta($post->ID, 'location_description', true)); ?>
                             </section>
                         </div>
-                    </div>       
-                    <div class="col-4">
-                        <div class="event-details background-light-<?php echo $colour; ?>">
+     
+                    <aside>
+                        <div class="aside-text-box">
                             <h2 class="hidden">Location Details</h2>
                             <?php if( (!empty($address)) ): ?>
 	                            <h3>Address</h3>
@@ -57,7 +56,7 @@
 	                            <p><?php the_field('location_admission'); ?></p>
                             <?php endif; ?>
                         </div>
-                        <div class="event-details background-light-<?php echo $colour; ?>">
+                        <div class="aside-text-box">
                             <h2 class="hidden">Further information</h2>
                             <h3>Visit <?php echo get_post_meta($post->ID, 'group_name', true); ?> online</h3>
                             <?php if (!empty($website)) : ?>
@@ -68,7 +67,7 @@
                         <?php if( has_term('active-alton', 'locationtype') ): ?>
                             <p><a href="/active-alton/"><img src="<?php echo esc_url( get_template_directory_uri() );?>/images/active-alton-logo-sm.jpg" alt="Part of Active Alton" style="width: 100%; height: auto;"/></a></p>
                         <?php endif ?>
-                    </div>
+                        </aside>
                 </div>
             </div>
         </section>
